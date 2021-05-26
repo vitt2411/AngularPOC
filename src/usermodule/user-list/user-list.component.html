@@ -1,0 +1,137 @@
+
+<div>
+
+  <h1 class="a"><span style="background-color:rgb(144, 196, 238); padding:5px;">Welcome UserManagement Service</span></h1>
+
+  </div>
+
+<br>
+<div class="container" *ngIf="flag1">
+  <div class="row">
+             <div id="custom-search-input">
+                              <div class="input-group col-md-12" style="text-align: center">
+                                  <input type="text" class="search-query form-control" placeholder="Search With Name"  name="name" [(ngModel)]="firstname"/>
+                                  <span class="input-group-btn">
+                                      <button class="btn btn-danger" type="button" (click)="findByname()">
+                                          <span class=" glyphicon glyphicon-search">search</span>
+                                      </button>
+                                  </span>
+                              </div>
+                          </div>
+  </div>
+  </div>
+<br>
+
+
+
+<br>
+
+
+        <div class="row col-md-16 col-md-offset-6 custyle">
+          <div class="container" *ngIf="flag1">
+            <div class="container">
+              <div>
+                <label>Sort-</label>
+                <select [(ngModel)]="options" (ngModelChange)="sortBY()" id="selectid" class="form-control-mb-12">
+
+                <option value="select"></option>
+                <option value="doj">DOJ</option>
+                <option value="dob">DOB</option>
+                </select>
+
+                </div>
+                </div>
+      <div class="a">
+        <table class="table table-hover table-dark" id="table1" >
+        <thead>
+            <tr>
+                <th>UserId</th>
+                <th>FIRST_NAME</th>
+                <th>LAST_NAME</th>
+                <th>PINCODE</th>
+                <th>DOB</th>
+                <th>DOJ</th>
+                <th>EMAIL</th>
+                <th>DELETE</th>
+                <th>UPDATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.pinCode}}</td>
+                <td>{{user.dateOfBirth}}</td>
+                <td>{{user.dateOfJoining}}</td>
+                <td>{{user.emailID}}</td>
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="reloadCurrentPage();delteUser(user)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                <td class="text-center"><button class="btn btn-info" (click)="updateUser(user)"><span class="glyphicon glyphicon-remove"></span> update</button></td>
+
+
+              </tr>
+        </tbody>
+        </table>
+        </div>
+        </div>
+    </div>
+
+    <table>
+
+
+
+
+
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register"  style="position: absolute;" *ngIf="flag">
+  <div class="row">
+                    <div class="col-md register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>USER MANAGEMENT SYSTEM</p>
+
+
+                    </div>
+                    <div class="col-md register-right">
+
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Update the User</h3>
+                                <div class="row register-form">
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="First Name *" [(ngModel)]="s.user.firstName" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name *" [(ngModel)]="s.user.lastName" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Pincode *" [(ngModel)]="s.user.pinCode" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="Date Of Birth" [(ngModel)]="s.user.dateOfBirth"/>
+                                        </div>
+
+                                      <div class="form-group">
+                                        <input type="text" class="form-control"  placeholder="Date Of Joining" [(ngModel)]="s.user.dateOfJoining"/>
+                                    </div>
+                                    <div class="form-group">
+                                      <input type="text" class="form-control"  placeholder="Email" [(ngModel)]="s.user.emailID"/>
+                                  </div>
+
+                                        <input type="submit" class="btnRegister"  value="update" (click)="reloadCurrentPage();submitData(s.user)">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+

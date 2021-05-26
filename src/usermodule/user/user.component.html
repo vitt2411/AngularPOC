@@ -1,0 +1,57 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>USER MANAGEMENT SYSTEM</p>
+
+
+                    </div>
+                    <div class="col-md-8 register-right">
+
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Register the User</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="First Name " [(ngModel)]="ss.user.firstName" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name " [(ngModel)]="ss.user.lastName" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Pincode " [(ngModel)]="ss.user.pinCode" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="Date Of Birth" [(ngModel)]="ss.user.dateOfBirth"/>
+                                        </div>
+
+                                      <div class="form-group">
+                                        <input type="text" class="form-control"  placeholder="Date Of Joining" [(ngModel)]="ss.user.dateOfJoining"/>
+                                    </div>
+                                    <div class="form-group">
+                                      <input type="text" class="form-control"  placeholder="Email" [(ngModel)]="ss.user.emailID"/>
+                                  </div>
+
+                                        <input type="submit" class="btnRegister"  value="Register" (click)="submitData(ss.user);gotoList()">
+                                        <input type="submit" class="btnReset"  value="Reset" (click)="resetData()">
+                                    </div>
+                                    <div *ngIf="flag" style="color: green,align-selfcentral">
+                                      {{msg}}
+
+                                      </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<router-outlet></router-outlet>
